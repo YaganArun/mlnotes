@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Yagan Arun</title>
+    <link>https://YaganArun.github.io/mlnotes/</link>
+    <description>Recent content on Yagan Arun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 20 Apr 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://YaganArun.github.io/mlnotes/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>List Comprehension</title>
+      <link>https://YaganArun.github.io/mlnotes/python/basics/list-comprehension/</link>
+      <pubDate>Sat, 20 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://YaganArun.github.io/mlnotes/python/basics/list-comprehension/</guid>
+      <description>even_list = [num for num in range(40) if num % 2 == 0] print(even_list) [0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38]  </description>
+    </item>
+    
+    <item>
+      <title>Simple Python</title>
+      <link>https://YaganArun.github.io/mlnotes/python/basics/simple-python/</link>
+      <pubDate>Sat, 20 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://YaganArun.github.io/mlnotes/python/basics/simple-python/</guid>
+      <description>print(&amp;#39;Hello Toronto&amp;#39;) Hello Toronto  print(2) 2  </description>
+    </item>
+    
+    <item>
+      <title>Template</title>
+      <link>https://YaganArun.github.io/mlnotes/python/basics/template/</link>
+      <pubDate>Sat, 20 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://YaganArun.github.io/mlnotes/python/basics/template/</guid>
+      <description>print(&amp;#39;Hello Toronto&amp;#39;) Hello Toronto  print(2) 2  </description>
+    </item>
+    
+  </channel>
+</rss>
