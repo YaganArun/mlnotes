@@ -66,6 +66,16 @@
     </item>
     
     <item>
+      <title>Correlation Matrix</title>
+      <link>https://YaganArun.github.io/mlnotes/python/machinelearning/correlation_matrix/</link>
+      <pubDate>Sat, 20 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://YaganArun.github.io/mlnotes/python/machinelearning/correlation_matrix/</guid>
+      <description>Source 1.) Correlation Matrix =&amp;gt; https://www.displayr.com/what-is-a-correlation-matrix/ 2.) HeatMaps =&amp;gt; https://towardsdatascience.com/better-heatmaps-and-correlation-matrix-plots-in-python-41445d0f2bec
+import pandas as pd import matplotlib.pyplot as plt import seaborn as sns DATA_PATH = &amp;#39;/Users/yaganarun/Documents/TACTII/kaggle_learnathon/mlnotes/content/python/heart.csv&amp;#39;df = pd.read_csv(DATA_PATH) df.head(3)  .dataframe tbody tr th:only-of-type { vertical-align: middle; } .dataframe tbody tr th { vertical-align: top; } .dataframe thead th { text-align: right; }    age sex cp trestbps chol fbs restecg thalach exang oldpeak slope ca thal target     0 63 1 3 145 233 1 0 150 0 2.</description>
+    </item>
+    
+    <item>
       <title>F1 Score using scikit learn</title>
       <link>https://YaganArun.github.io/mlnotes/python/machinelearning/f1_score_scikit/</link>
       <pubDate>Sat, 20 Apr 2019 00:00:00 +0000</pubDate>
