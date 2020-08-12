@@ -49,10 +49,10 @@
     
     <item>
       <title>F1 Score using scikit learn</title>
-      <link>https://YaganArun.github.io/mlnotes/python/machinelearning/f1-score-scikit/</link>
+      <link>https://YaganArun.github.io/mlnotes/python/machinelearning/f1_score_scikit/</link>
       <pubDate>Sat, 20 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://YaganArun.github.io/mlnotes/python/machinelearning/f1-score-scikit/</guid>
+      <guid>https://YaganArun.github.io/mlnotes/python/machinelearning/f1_score_scikit/</guid>
       <description>from sklearn.metrics import f1_scorey_true = [0, 1, 2, 0, 1, 2] y_pred = [0, 2, 1, 0, 0, 1]f1_score_ = f1_score(y_true , y_pred , average=&amp;#39;micro&amp;#39;) f1_score_ 0.3333333333333333  </description>
     </item>
     
