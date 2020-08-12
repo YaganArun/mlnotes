@@ -34,7 +34,7 @@
   "@type": "BlogPosting",
   "headline": "Seaborn bar plot",
   "url": "https:\/\/YaganArun.github.io\/mlnotes\/python\/seaborn\/seaborn_barplot\/",
-  "wordCount": "42",
+  "wordCount": "134",
   "datePublished": "2020-08-12T00:00:00\x2b00:00",
   "dateModified": "2020-08-12T00:00:00\x2b00:00",
   "author": {
@@ -123,15 +123,108 @@ MathJax.Hub.Config({
     </div>
   </header>
   <div class="content">
-  <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">seaborn</span> <span class="kn">as</span> <span class="nn">sns</span> 
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">vehicle</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">&#39;audi&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="p">,</span> <span class="p">[</span><span class="s1">&#39;appache&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="p">,</span> <span class="p">[</span><span class="s1">&#39;benz&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="p">,</span> <span class="p">[</span><span class="s1">&#39;lambhorghini&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="p">,</span> <span class="p">[</span><span class="s1">&#39;Fazer&#39;</span> <span class="p">,</span> <span class="mi">2</span><span class="p">]]</span>
-<span class="n">custom</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">vehicle</span> <span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;vehicle&#39;</span><span class="p">,</span><span class="s1">&#39;class&#39;</span><span class="p">])</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># x must a column from your dataset</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span> <span class="n">x</span> <span class="o">=</span> <span class="n">custom</span><span class="p">[</span><span class="s1">&#39;class&#39;</span><span class="p">]</span> <span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">custom</span><span class="p">[</span><span class="s1">&#39;vehicle&#39;</span><span class="p">])</span></code></pre></div>
-<pre><code>&lt;AxesSubplot:xlabel='class', ylabel='vehicle'&gt;
+  <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="kn">as</span> <span class="nn">sns</span> 
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+<span class="n">DATA_PATH</span> <span class="o">=</span> <span class="s1">&#39;/Users/yaganarun/Documents/TACTII/kaggle_learnathon/mlnotes/content/python/heart.csv&#39;</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">DATA_PATH</span><span class="p">)</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span></code></pre></div>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>age</th>
+      <th>sex</th>
+      <th>cp</th>
+      <th>trestbps</th>
+      <th>chol</th>
+      <th>fbs</th>
+      <th>restecg</th>
+      <th>thalach</th>
+      <th>exang</th>
+      <th>oldpeak</th>
+      <th>slope</th>
+      <th>ca</th>
+      <th>thal</th>
+      <th>target</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>63</td>
+      <td>1</td>
+      <td>3</td>
+      <td>145</td>
+      <td>233</td>
+      <td>1</td>
+      <td>0</td>
+      <td>150</td>
+      <td>0</td>
+      <td>2.3</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>37</td>
+      <td>1</td>
+      <td>2</td>
+      <td>130</td>
+      <td>250</td>
+      <td>0</td>
+      <td>1</td>
+      <td>187</td>
+      <td>0</td>
+      <td>3.5</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>41</td>
+      <td>0</td>
+      <td>1</td>
+      <td>130</td>
+      <td>204</td>
+      <td>0</td>
+      <td>0</td>
+      <td>172</td>
+      <td>0</td>
+      <td>1.4</td>
+      <td>2</td>
+      <td>0</td>
+      <td>2</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># x must a column from your dataset</span>
+<span class="c1">#target -&gt; 1 = heart disease , 0 = no heart disease</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">15</span> <span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span> <span class="n">x</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]</span> <span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;cp&#39;</span><span class="p">])</span></code></pre></div>
+<pre><code>&lt;AxesSubplot:xlabel='age', ylabel='cp'&gt;
 </code></pre>
 
-<p><img src="seaborn_barplot_3_1.png" alt="png" /></p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"></code></pre></div>
+<p><img src="seaborn_barplot_4_1.png" alt="png" /></p>
+
 </div>
   <aside>
       
