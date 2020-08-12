@@ -6,10 +6,46 @@
     <description>Recent content on Yagan Arun</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 20 Apr 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 11 Aug 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://YaganArun.github.io/mlnotes/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>DataFrame apply using custom function</title>
+      <link>https://YaganArun.github.io/mlnotes/python/pandas/dataframe_apply_using_custom_function/</link>
+      <pubDate>Tue, 11 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://YaganArun.github.io/mlnotes/python/pandas/dataframe_apply_using_custom_function/</guid>
+      <description>import pandas as pddata = [&amp;#39;audi is awsome &amp;#39; , &amp;#39;Maruthi is best&amp;#39; , &amp;#39;Benz sucks&amp;#39; , &amp;#39;Lambhoghini mind blowing&amp;#39;] df = pd.DataFrame(data , columns=[&amp;#39;feedback&amp;#39;])def custom_length(sent): return len(sent) df[&amp;#39;feedback_chars&amp;#39;] = df[&amp;#39;feedback&amp;#39;].apply(custom_length) df  .dataframe tbody tr th:only-of-type { vertical-align: middle; } .dataframe tbody tr th { vertical-align: top; } .dataframe thead th { text-align: right; }    feedback feedback_chars     0 audi is awsome 15   1 Maruthi is best 15   2 Benz sucks 10   3 Lambhoghini mind blowing 24     df.</description>
+    </item>
+    
+    <item>
+      <title>DataFrame apply using lambda function</title>
+      <link>https://YaganArun.github.io/mlnotes/python/pandas/dataframe_apply_using_lamda/</link>
+      <pubDate>Tue, 11 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://YaganArun.github.io/mlnotes/python/pandas/dataframe_apply_using_lamda/</guid>
+      <description>import pandas as pddata = [&amp;#39;audi is awsome &amp;#39; , &amp;#39;Maruthi is best&amp;#39; , &amp;#39;Benz sucks&amp;#39; , &amp;#39;Lambhoghini mind blowing&amp;#39;] df = pd.DataFrame(data , columns=[&amp;#39;feedback&amp;#39;])df[&amp;#39;feedback_chars&amp;#39;] = df[&amp;#39;feedback&amp;#39;].apply( lambda x: len(x) ) df  .dataframe tbody tr th:only-of-type { vertical-align: middle; } .dataframe tbody tr th { vertical-align: top; } .dataframe thead th { text-align: right; }    feedback feedback_chars     0 audi is awsome 15   1 Maruthi is best 15   2 Benz sucks 10   3 Lambhoghini mind blowing 24     </description>
+    </item>
+    
+    <item>
+      <title>To find null in a DataFrame</title>
+      <link>https://YaganArun.github.io/mlnotes/python/pandas/dataframe_isnull/</link>
+      <pubDate>Tue, 11 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://YaganArun.github.io/mlnotes/python/pandas/dataframe_isnull/</guid>
+      <description>cars = [[&amp;#39;Audi&amp;#39; , 10] , [&amp;#39;Apple&amp;#39; , None] , [&amp;#39;Lambhorghini&amp;#39;,10] , [&amp;#39;Bens&amp;#39;,9] , [&amp;#39;Samsung&amp;#39;,None]]import pandas as pd custom = pd.DataFrame(data=cars , columns=[&amp;#39;Car&amp;#39;,&amp;#39;Rating&amp;#39;])custom  .dataframe tbody tr th:only-of-type { vertical-align: middle; } .dataframe tbody tr th { vertical-align: top; } .dataframe thead th { text-align: right; }    Car Rating     0 Audi 10.0   1 Apple NaN   2 Lambhorghini 10.0   3 Bens 9.</description>
+    </item>
+    
+    <item>
+      <title>List Comprehension</title>
+      <link>https://YaganArun.github.io/mlnotes/python/machinelearning/f1-score-scikit/</link>
+      <pubDate>Sat, 20 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://YaganArun.github.io/mlnotes/python/machinelearning/f1-score-scikit/</guid>
+      <description>from sklearn.metrics import f1_scorey_true = [0, 1, 2, 0, 1, 2] y_pred = [0, 2, 1, 0, 0, 1]f1_score_ = f1_score(y_true , y_pred , average=&amp;#39;micro&amp;#39;) f1_score_ 0.3333333333333333  </description>
+    </item>
     
     <item>
       <title>List Comprehension</title>

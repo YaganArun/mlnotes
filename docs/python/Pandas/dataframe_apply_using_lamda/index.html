@@ -16,14 +16,14 @@
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<meta property="og:title" content="List Comprehension" />
+<meta property="og:title" content="DataFrame apply using lambda function" />
 <meta property="og:description" content="-" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://YaganArun.github.io/mlnotes/python/basics/list-comprehension/" /><meta property="article:published_time" content="2019-04-20T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2019-04-20T00:00:00&#43;00:00"/>
+<meta property="og:url" content="https://YaganArun.github.io/mlnotes/python/pandas/dataframe_apply_using_lamda/" /><meta property="article:published_time" content="2020-08-11T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2020-08-11T00:00:00&#43;00:00"/>
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="List Comprehension"/>
+<meta name="twitter:title" content="DataFrame apply using lambda function"/>
 <meta name="twitter:description" content="-"/>
 <meta name="generator" content="Hugo 0.53" />
 
@@ -32,20 +32,20 @@
 {
   "@context": "http://schema.org",
   "@type": "BlogPosting",
-  "headline": "List Comprehension",
-  "url": "https:\/\/YaganArun.github.io\/mlnotes\/python\/basics\/list-comprehension\/",
-  "wordCount": "34",
-  "datePublished": "2019-04-20T00:00:00\x2b00:00",
-  "dateModified": "2019-04-20T00:00:00\x2b00:00",
+  "headline": "DataFrame apply using lambda function",
+  "url": "https:\/\/YaganArun.github.io\/mlnotes\/python\/pandas\/dataframe_apply_using_lamda\/",
+  "wordCount": "76",
+  "datePublished": "2020-08-11T00:00:00\x2b00:00",
+  "dateModified": "2020-08-11T00:00:00\x2b00:00",
   "author": {
     "@type": "Person",
-    "name": "TACT"
+    "name": "Yagan Arun"
   },
   "description": "-"
 }
 </script> 
 
-    <title>List Comprehension</title>
+    <title>DataFrame apply using lambda function</title>
 
     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
@@ -117,16 +117,60 @@ MathJax.Hub.Config({
   <div class="technical_note">
   <header>
       
-    <h1 class="technical_note_title">List Comprehension</h1>
+    <h1 class="technical_note_title">DataFrame apply using lambda function</h1>
     <div class="technical_note_date">
-      <time datetime=" 2019-04-20T00:00:00Z "> 20 Apr 2019</time>
+      <time datetime=" 2020-08-11T00:00:00Z "> 11 Aug 2020</time>
     </div>
   </header>
   <div class="content">
-  <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">even_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">num</span> <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">40</span><span class="p">)</span> <span class="k">if</span> <span class="n">num</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span>
-<span class="k">print</span><span class="p">(</span><span class="n">even_list</span><span class="p">)</span></code></pre></div>
-<pre><code>[0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38]
-</code></pre>
+  <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;audi is awsome &#39;</span> <span class="p">,</span> <span class="s1">&#39;Maruthi is best&#39;</span> <span class="p">,</span> <span class="s1">&#39;Benz sucks&#39;</span> <span class="p">,</span> <span class="s1">&#39;Lambhoghini mind blowing&#39;</span><span class="p">]</span> 
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span> <span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;feedback&#39;</span><span class="p">])</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span><span class="p">[</span><span class="s1">&#39;feedback_chars&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;feedback&#39;</span><span class="p">]</span><span class="o">.</span><span class="nb">apply</span><span class="p">(</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">)</span>  </code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span></code></pre></div>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>feedback</th>
+      <th>feedback_chars</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>audi is awsome</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Maruthi is best</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Benz sucks</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Lambhoghini mind blowing</td>
+      <td>24</td>
+    </tr>
+  </tbody>
+</table>
+</div>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"></code></pre></div>
 </div>
   <aside>
