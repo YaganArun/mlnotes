@@ -16,14 +16,14 @@
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<meta property="og:title" content="List Comprehension" />
+<meta property="og:title" content="Seaborn bar plot" />
 <meta property="og:description" content="-" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://YaganArun.github.io/mlnotes/python/basics/list-comprehension/" /><meta property="article:published_time" content="2019-04-20T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2019-04-20T00:00:00&#43;00:00"/>
+<meta property="og:url" content="https://YaganArun.github.io/mlnotes/python/seaborn/seaborn_barplot/" /><meta property="article:published_time" content="2020-08-12T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2020-08-12T00:00:00&#43;00:00"/>
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="List Comprehension"/>
+<meta name="twitter:title" content="Seaborn bar plot"/>
 <meta name="twitter:description" content="-"/>
 <meta name="generator" content="Hugo 0.53" />
 
@@ -32,20 +32,20 @@
 {
   "@context": "http://schema.org",
   "@type": "BlogPosting",
-  "headline": "List Comprehension",
-  "url": "https:\/\/YaganArun.github.io\/mlnotes\/python\/basics\/list-comprehension\/",
-  "wordCount": "34",
-  "datePublished": "2019-04-20T00:00:00\x2b00:00",
-  "dateModified": "2019-04-20T00:00:00\x2b00:00",
+  "headline": "Seaborn bar plot",
+  "url": "https:\/\/YaganArun.github.io\/mlnotes\/python\/seaborn\/seaborn_barplot\/",
+  "wordCount": "42",
+  "datePublished": "2020-08-12T00:00:00\x2b00:00",
+  "dateModified": "2020-08-12T00:00:00\x2b00:00",
   "author": {
     "@type": "Person",
-    "name": "TACT"
+    "name": "Yagan Arun"
   },
   "description": "-"
 }
 </script> 
 
-    <title>List Comprehension</title>
+    <title>Seaborn bar plot</title>
 
     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
@@ -117,16 +117,20 @@ MathJax.Hub.Config({
   <div class="technical_note">
   <header>
       
-    <h1 class="technical_note_title">List Comprehension</h1>
+    <h1 class="technical_note_title">Seaborn bar plot</h1>
     <div class="technical_note_date">
-      <time datetime=" 2019-04-20T00:00:00Z "> 20 Apr 2019</time>
+      <time datetime=" 2020-08-12T00:00:00Z "> 12 Aug 2020</time>
     </div>
   </header>
   <div class="content">
-  <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">even_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">num</span> <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">40</span><span class="p">)</span> <span class="k">if</span> <span class="n">num</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span>
-<span class="k">print</span><span class="p">(</span><span class="n">even_list</span><span class="p">)</span></code></pre></div>
-<pre><code>[0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38]
+  <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">seaborn</span> <span class="kn">as</span> <span class="nn">sns</span> 
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">vehicle</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">&#39;audi&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="p">,</span> <span class="p">[</span><span class="s1">&#39;appache&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="p">,</span> <span class="p">[</span><span class="s1">&#39;benz&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="p">,</span> <span class="p">[</span><span class="s1">&#39;lambhorghini&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="p">,</span> <span class="p">[</span><span class="s1">&#39;Fazer&#39;</span> <span class="p">,</span> <span class="mi">2</span><span class="p">]]</span>
+<span class="n">custom</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">vehicle</span> <span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;vehicle&#39;</span><span class="p">,</span><span class="s1">&#39;class&#39;</span><span class="p">])</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># x must a column from your dataset</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span> <span class="n">x</span> <span class="o">=</span> <span class="n">custom</span><span class="p">[</span><span class="s1">&#39;class&#39;</span><span class="p">]</span> <span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">custom</span><span class="p">[</span><span class="s1">&#39;vehicle&#39;</span><span class="p">])</span></code></pre></div>
+<pre><code>&lt;AxesSubplot:xlabel='class', ylabel='vehicle'&gt;
 </code></pre>
+
+<p><img src="seaborn_barplot_3_1.png" alt="png" /></p>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"></code></pre></div>
 </div>
   <aside>
