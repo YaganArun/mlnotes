@@ -17,7 +17,7 @@
       <pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
       
       <guid>https://YaganArun.github.io/mlnotes/python/pandas/dataframe_useful_operations/</guid>
-      <description>import pandas as pdcars = [[&amp;#39;Audi&amp;#39; , 10] , [&amp;#39;Apple&amp;#39; , None] , [&amp;#39;Lambhorghini&amp;#39;,10] , [&amp;#39;Bens&amp;#39;,9] , [&amp;#39;Samsung&amp;#39;,None] , [&amp;#39;Google&amp;#39;,None]] df = pd.DataFrame(data = cars , columns = [&amp;#39;Cars&amp;#39; , &amp;#39;Rating&amp;#39;])df  .dataframe tbody tr th:only-of-type { vertical-align: middle; } .dataframe tbody tr th { vertical-align: top; } .dataframe thead th { text-align: right; }    Cars Rating     0 Audi 10.0   1 Apple NaN   2 Lambhorghini 10.</description>
+      <description>import pandas as pdcars = [[&amp;#39;Audi&amp;#39; , 10] , [&amp;#39;Apple&amp;#39; , None] , [&amp;#39;Lambhorghini&amp;#39;,10] , [&amp;#39;Bens&amp;#39;,9] , [&amp;#39;Samsung&amp;#39;,None] , [&amp;#39;Google&amp;#39;,None] , [&amp;#39;Apple&amp;#39;,None]] df = pd.DataFrame(data = cars , columns = [&amp;#39;Cars&amp;#39; , &amp;#39;Rating&amp;#39;])df  .dataframe tbody tr th:only-of-type { vertical-align: middle; } .dataframe tbody tr th { vertical-align: top; } .dataframe thead th { text-align: right; }    Cars Rating     0 Audi 10.0   1 Apple NaN   2 Lambhorghini 10.</description>
     </item>
     
     <item>
