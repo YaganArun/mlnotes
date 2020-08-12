@@ -49,7 +49,7 @@
                     <h4 class="card-header">Machine Learning Necessities</h4>
                     <div class="card-body">
                         <ul>
-                            {{ range (where .Pages "File.Dir" "in" "/python/machineLearning/").ByTitle }}
+                            {{ range (where .Pages "File.Dir" "in" "/python/machinelearning/").ByTitle }}
                             {{ if ne .Title "Template" }}
                             <li>
                                 <a href="{{.Permalink}}">{{.Title}}</a>
