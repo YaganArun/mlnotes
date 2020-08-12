@@ -34,7 +34,7 @@
   "@type": "BlogPosting",
   "headline": "To find null in a DataFrame",
   "url": "https:\/\/YaganArun.github.io\/mlnotes\/python\/pandas\/dataframe_isnull\/",
-  "wordCount": "136",
+  "wordCount": "268",
   "datePublished": "2020-08-11T00:00:00\x2b00:00",
   "dateModified": "2020-08-11T00:00:00\x2b00:00",
   "author": {
@@ -123,8 +123,7 @@ MathJax.Hub.Config({
     </div>
   </header>
   <div class="content">
-  <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">cars</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">&#39;Audi&#39;</span> <span class="p">,</span> <span class="mi">10</span><span class="p">]</span> <span class="p">,</span> <span class="p">[</span><span class="s1">&#39;Apple&#39;</span> <span class="p">,</span> <span class="bp">None</span><span class="p">]</span> <span class="p">,</span> <span class="p">[</span><span class="s1">&#39;Lambhorghini&#39;</span><span class="p">,</span><span class="mi">10</span><span class="p">]</span> <span class="p">,</span> <span class="p">[</span><span class="s1">&#39;Bens&#39;</span><span class="p">,</span><span class="mi">9</span><span class="p">]</span> <span class="p">,</span> <span class="p">[</span><span class="s1">&#39;Samsung&#39;</span><span class="p">,</span><span class="bp">None</span><span class="p">]]</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
-<span class="n">custom</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">cars</span> <span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Car&#39;</span><span class="p">,</span><span class="s1">&#39;Rating&#39;</span><span class="p">])</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">custom</span></code></pre></div>
+  <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">DATA_PATH</span> <span class="o">=</span> <span class="s1">&#39;/Users/yaganarun/Documents/TACTII/kaggle_learnathon/mlnotes/content/python/heart.csv&#39;</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">DATA_PATH</span><span class="p">)</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span> <span class="c1">#easy with small datasets</span></code></pre></div>
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -143,60 +142,20 @@ MathJax.Hub.Config({
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>Car</th>
-      <th>Rating</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Audi</td>
-      <td>10.0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Apple</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Lambhorghini</td>
-      <td>10.0</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Bens</td>
-      <td>9.0</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Samsung</td>
-      <td>NaN</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">custom</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span> <span class="c1">#easy with small datasets</span></code></pre></div>
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Car</th>
-      <th>Rating</th>
+      <th>age</th>
+      <th>sex</th>
+      <th>cp</th>
+      <th>trestbps</th>
+      <th>chol</th>
+      <th>fbs</th>
+      <th>restecg</th>
+      <th>thalach</th>
+      <th>exang</th>
+      <th>oldpeak</th>
+      <th>slope</th>
+      <th>ca</th>
+      <th>thal</th>
+      <th>target</th>
     </tr>
   </thead>
   <tbody>
@@ -204,14 +163,50 @@ MathJax.Hub.Config({
       <th>0</th>
       <td>False</td>
       <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
     </tr>
     <tr>
       <th>1</th>
       <td>False</td>
-      <td>True</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
     </tr>
     <tr>
       <th>2</th>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
       <td>False</td>
       <td>False</td>
     </tr>
@@ -219,22 +214,161 @@ MathJax.Hub.Config({
       <th>3</th>
       <td>False</td>
       <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
     </tr>
     <tr>
       <th>4</th>
       <td>False</td>
-      <td>True</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>298</th>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>299</th>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>300</th>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>301</th>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>302</th>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
     </tr>
   </tbody>
 </table>
+<p>303 rows × 14 columns</p>
 </div>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">custom</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="nb">sum</span><span class="p">()</span> <span class="c1">#gives the count of null for each colums in data set</span></code></pre></div>
-<pre><code>Car       0
-Rating    2
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="nb">sum</span><span class="p">()</span> <span class="c1">#gives the count of null for each colums in data set</span></code></pre></div>
+<pre><code>age         0
+sex         0
+cp          0
+trestbps    0
+chol        0
+fbs         0
+restecg     0
+thalach     0
+exang       0
+oldpeak     0
+slope       0
+ca          0
+thal        0
+target      0
 dtype: int64
 </code></pre>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">custom</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="nb">sum</span><span class="p">()</span><span class="o">.</span><span class="nb">max</span><span class="p">()</span> <span class="c1"># gives the max number of null values</span></code></pre></div>
-<pre><code>2
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="nb">sum</span><span class="p">()</span><span class="o">.</span><span class="nb">max</span><span class="p">()</span> <span class="c1"># gives the max number of null values</span></code></pre></div>
+<pre><code>0
 </code></pre>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"></code></pre></div>
 </div>

@@ -34,7 +34,7 @@
   "@type": "BlogPosting",
   "headline": "Seaborn count plot",
   "url": "https:\/\/YaganArun.github.io\/mlnotes\/python\/seaborn\/seaborn_countplot\/",
-  "wordCount": "38",
+  "wordCount": "30",
   "datePublished": "2020-08-11T00:00:00\x2b00:00",
   "dateModified": "2020-08-11T00:00:00\x2b00:00",
   "author": {
@@ -124,10 +124,10 @@ MathJax.Hub.Config({
   </header>
   <div class="content">
   <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">seaborn</span> <span class="kn">as</span> <span class="nn">sns</span> 
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">vehicle</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">&#39;audi&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="p">,</span> <span class="p">[</span><span class="s1">&#39;appache&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="p">,</span> <span class="p">[</span><span class="s1">&#39;benz&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="p">,</span> <span class="p">[</span><span class="s1">&#39;lambhorghini&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">]]</span>
-<span class="n">custom</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">vehicle</span> <span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;vehicle&#39;</span><span class="p">,</span><span class="s1">&#39;class&#39;</span><span class="p">])</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># x must a column from your dataset</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span> <span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;class&#39;</span> <span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">custom</span><span class="p">)</span></code></pre></div>
-<pre><code>&lt;AxesSubplot:xlabel='class', ylabel='count'&gt;
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+<span class="n">DATA_PATH</span> <span class="o">=</span> <span class="s1">&#39;/Users/yaganarun/Documents/TACTII/kaggle_learnathon/mlnotes/content/python/heart.csv&#39;</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">DATA_PATH</span><span class="p">)</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># x must a column from your dataset</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span> <span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;target&#39;</span> <span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">df</span><span class="p">)</span></code></pre></div>
+<pre><code>&lt;AxesSubplot:xlabel='target', ylabel='count'&gt;
 </code></pre>
 
 <p><img src="seaborn_countplot_3_1.png" alt="png" /></p>

@@ -10,24 +10,24 @@ draft: false
 ```python
 import seaborn as sns 
 import pandas as pd
+DATA_PATH = '/Users/yaganarun/Documents/TACTII/kaggle_learnathon/mlnotes/content/python/heart.csv'
 ```
 
 
 ```python
-vehicle = [['audi',1] , ['appache',2] , ['benz',1] , ['lambhorghini',1]]
-custom = pd.DataFrame(data=vehicle , columns=['vehicle','class'])
+df = pd.read_csv(DATA_PATH)
 ```
 
 
 ```python
 # x must a column from your dataset
-sns.countplot( x = 'class' , data = custom)
+sns.countplot( x = 'target' , data = df)
 ```
 
 
 
 
-    <AxesSubplot:xlabel='class', ylabel='count'>
+    <AxesSubplot:xlabel='target', ylabel='count'>
 
 
 

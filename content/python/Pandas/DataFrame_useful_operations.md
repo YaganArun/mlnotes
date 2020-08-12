@@ -9,17 +9,17 @@ draft: false
 
 ```python
 import pandas as pd
+DATA_PATH = '/Users/yaganarun/Documents/TACTII/kaggle_learnathon/mlnotes/content/python/heart.csv'
 ```
 
 
 ```python
-cars = [['Audi' , 10] , ['Apple' , None] , ['Lambhorghini',10] , ['Bens',9] , ['Samsung',None] , ['Google',None] , ['Apple',None]]
-df = pd.DataFrame(data = cars , columns = ['Cars' , 'Rating'])
+df = pd.read_csv(DATA_PATH)
 ```
 
 
 ```python
-df
+df.head(2)
 ```
 
 
@@ -43,45 +43,56 @@ df
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>Cars</th>
-      <th>Rating</th>
+      <th>age</th>
+      <th>sex</th>
+      <th>cp</th>
+      <th>trestbps</th>
+      <th>chol</th>
+      <th>fbs</th>
+      <th>restecg</th>
+      <th>thalach</th>
+      <th>exang</th>
+      <th>oldpeak</th>
+      <th>slope</th>
+      <th>ca</th>
+      <th>thal</th>
+      <th>target</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>Audi</td>
-      <td>10.0</td>
+      <td>63</td>
+      <td>1</td>
+      <td>3</td>
+      <td>145</td>
+      <td>233</td>
+      <td>1</td>
+      <td>0</td>
+      <td>150</td>
+      <td>0</td>
+      <td>2.3</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>Apple</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Lambhorghini</td>
-      <td>10.0</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Bens</td>
-      <td>9.0</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Samsung</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>Google</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>Apple</td>
-      <td>NaN</td>
+      <td>37</td>
+      <td>1</td>
+      <td>2</td>
+      <td>130</td>
+      <td>250</td>
+      <td>0</td>
+      <td>1</td>
+      <td>187</td>
+      <td>0</td>
+      <td>3.5</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>1</td>
     </tr>
   </tbody>
 </table>
@@ -98,7 +109,9 @@ df.columns
 
 
 
-    Index(['Cars', 'Rating'], dtype='object')
+    Index(['age', 'sex', 'cp', 'trestbps', 'chol', 'fbs', 'restecg', 'thalach',
+           'exang', 'oldpeak', 'slope', 'ca', 'thal', 'target'],
+          dtype='object')
 
 
 
@@ -109,7 +122,7 @@ row , column = df.shape[0] , df.shape[1]
 print('no of rows : {} , no of columns : {} '.format(row , column))
 ```
 
-    no of rows : 7 , no of columns : 2 
+    no of rows : 303 , no of columns : 14 
 
 
 
@@ -139,35 +152,107 @@ df.head()
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>Cars</th>
-      <th>Rating</th>
+      <th>age</th>
+      <th>sex</th>
+      <th>cp</th>
+      <th>trestbps</th>
+      <th>chol</th>
+      <th>fbs</th>
+      <th>restecg</th>
+      <th>thalach</th>
+      <th>exang</th>
+      <th>oldpeak</th>
+      <th>slope</th>
+      <th>ca</th>
+      <th>thal</th>
+      <th>target</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>Audi</td>
-      <td>10.0</td>
+      <td>63</td>
+      <td>1</td>
+      <td>3</td>
+      <td>145</td>
+      <td>233</td>
+      <td>1</td>
+      <td>0</td>
+      <td>150</td>
+      <td>0</td>
+      <td>2.3</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>Apple</td>
-      <td>NaN</td>
+      <td>37</td>
+      <td>1</td>
+      <td>2</td>
+      <td>130</td>
+      <td>250</td>
+      <td>0</td>
+      <td>1</td>
+      <td>187</td>
+      <td>0</td>
+      <td>3.5</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>Lambhorghini</td>
-      <td>10.0</td>
+      <td>41</td>
+      <td>0</td>
+      <td>1</td>
+      <td>130</td>
+      <td>204</td>
+      <td>0</td>
+      <td>0</td>
+      <td>172</td>
+      <td>0</td>
+      <td>1.4</td>
+      <td>2</td>
+      <td>0</td>
+      <td>2</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>Bens</td>
-      <td>9.0</td>
+      <td>56</td>
+      <td>1</td>
+      <td>1</td>
+      <td>120</td>
+      <td>236</td>
+      <td>0</td>
+      <td>1</td>
+      <td>178</td>
+      <td>0</td>
+      <td>0.8</td>
+      <td>2</td>
+      <td>0</td>
+      <td>2</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>Samsung</td>
-      <td>NaN</td>
+      <td>57</td>
+      <td>0</td>
+      <td>0</td>
+      <td>120</td>
+      <td>354</td>
+      <td>0</td>
+      <td>1</td>
+      <td>163</td>
+      <td>1</td>
+      <td>0.6</td>
+      <td>2</td>
+      <td>0</td>
+      <td>2</td>
+      <td>1</td>
     </tr>
   </tbody>
 </table>
@@ -202,35 +287,107 @@ df.tail()
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>Cars</th>
-      <th>Rating</th>
+      <th>age</th>
+      <th>sex</th>
+      <th>cp</th>
+      <th>trestbps</th>
+      <th>chol</th>
+      <th>fbs</th>
+      <th>restecg</th>
+      <th>thalach</th>
+      <th>exang</th>
+      <th>oldpeak</th>
+      <th>slope</th>
+      <th>ca</th>
+      <th>thal</th>
+      <th>target</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>2</th>
-      <td>Lambhorghini</td>
-      <td>10.0</td>
+      <th>298</th>
+      <td>57</td>
+      <td>0</td>
+      <td>0</td>
+      <td>140</td>
+      <td>241</td>
+      <td>0</td>
+      <td>1</td>
+      <td>123</td>
+      <td>1</td>
+      <td>0.2</td>
+      <td>1</td>
+      <td>0</td>
+      <td>3</td>
+      <td>0</td>
     </tr>
     <tr>
-      <th>3</th>
-      <td>Bens</td>
-      <td>9.0</td>
+      <th>299</th>
+      <td>45</td>
+      <td>1</td>
+      <td>3</td>
+      <td>110</td>
+      <td>264</td>
+      <td>0</td>
+      <td>1</td>
+      <td>132</td>
+      <td>0</td>
+      <td>1.2</td>
+      <td>1</td>
+      <td>0</td>
+      <td>3</td>
+      <td>0</td>
     </tr>
     <tr>
-      <th>4</th>
-      <td>Samsung</td>
-      <td>NaN</td>
+      <th>300</th>
+      <td>68</td>
+      <td>1</td>
+      <td>0</td>
+      <td>144</td>
+      <td>193</td>
+      <td>1</td>
+      <td>1</td>
+      <td>141</td>
+      <td>0</td>
+      <td>3.4</td>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>0</td>
     </tr>
     <tr>
-      <th>5</th>
-      <td>Google</td>
-      <td>NaN</td>
+      <th>301</th>
+      <td>57</td>
+      <td>1</td>
+      <td>0</td>
+      <td>130</td>
+      <td>131</td>
+      <td>0</td>
+      <td>1</td>
+      <td>115</td>
+      <td>1</td>
+      <td>1.2</td>
+      <td>1</td>
+      <td>1</td>
+      <td>3</td>
+      <td>0</td>
     </tr>
     <tr>
-      <th>6</th>
-      <td>Apple</td>
-      <td>NaN</td>
+      <th>302</th>
+      <td>57</td>
+      <td>0</td>
+      <td>1</td>
+      <td>130</td>
+      <td>236</td>
+      <td>0</td>
+      <td>0</td>
+      <td>174</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>2</td>
+      <td>0</td>
     </tr>
   </tbody>
 </table>
@@ -241,33 +398,30 @@ df.tail()
 
 ```python
 # Operation 5 : To know unique values in a dataframe ==> df.column_name.unique()
-df.Cars.unique()
+df.age.unique()
 ```
 
 
 
 
-    array(['Audi', 'Apple', 'Lambhorghini', 'Bens', 'Samsung', 'Google'],
-          dtype=object)
+    array([63, 37, 41, 56, 57, 44, 52, 54, 48, 49, 64, 58, 50, 66, 43, 69, 59,
+           42, 61, 40, 71, 51, 65, 53, 46, 45, 39, 47, 62, 34, 35, 29, 55, 60,
+           67, 68, 74, 76, 70, 38, 77])
 
 
 
 
 ```python
 # Operation 6 : getting count of each entities in a column.
-df['Cars'].value_counts()
+df.target.value_counts()
 ```
 
 
 
 
-    Apple           2
-    Lambhorghini    1
-    Samsung         1
-    Bens            1
-    Google          1
-    Audi            1
-    Name: Cars, dtype: int64
+    1    165
+    0    138
+    Name: target, dtype: int64
 
 
 
@@ -275,16 +429,16 @@ df['Cars'].value_counts()
 ```python
 # Operation 7 : grouping data in a data frame
 # here dataframe is grouped based on rating 
-df.groupby(['Rating'])['Cars'].count()
+df.groupby(['sex'])['target'].count()
 ```
 
 
 
 
-    Rating
-    9.0     1
-    10.0    2
-    Name: Cars, dtype: int64
+    sex
+    0     96
+    1    207
+    Name: target, dtype: int64
 
 
 

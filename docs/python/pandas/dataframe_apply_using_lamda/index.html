@@ -34,7 +34,7 @@
   "@type": "BlogPosting",
   "headline": "DataFrame apply using lambda function",
   "url": "https:\/\/YaganArun.github.io\/mlnotes\/python\/pandas\/dataframe_apply_using_lamda\/",
-  "wordCount": "76",
+  "wordCount": "115",
   "datePublished": "2020-08-11T00:00:00\x2b00:00",
   "dateModified": "2020-08-11T00:00:00\x2b00:00",
   "author": {
@@ -123,7 +123,8 @@ MathJax.Hub.Config({
     </div>
   </header>
   <div class="content">
-  <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;audi is awsome &#39;</span> <span class="p">,</span> <span class="s1">&#39;Maruthi is best&#39;</span> <span class="p">,</span> <span class="s1">&#39;Benz sucks&#39;</span> <span class="p">,</span> <span class="s1">&#39;Lambhoghini mind blowing&#39;</span><span class="p">]</span> 
+  <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+<span class="n">DATA_PATH</span> <span class="o">=</span> <span class="s1">&#39;/Users/yaganarun/Documents/TACTII/kaggle_learnathon/mlnotes/content/python/heart.csv&#39;</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;audi is awsome &#39;</span> <span class="p">,</span> <span class="s1">&#39;Maruthi is best&#39;</span> <span class="p">,</span> <span class="s1">&#39;Benz sucks&#39;</span> <span class="p">,</span> <span class="s1">&#39;Lambhoghini mind blowing&#39;</span><span class="p">]</span> 
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span> <span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;feedback&#39;</span><span class="p">])</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span><span class="p">[</span><span class="s1">&#39;feedback_chars&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;feedback&#39;</span><span class="p">]</span><span class="o">.</span><span class="nb">apply</span><span class="p">(</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">)</span>  </code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span></code></pre></div>
 <div>
 <style scoped>
@@ -171,7 +172,44 @@ MathJax.Hub.Config({
   </tbody>
 </table>
 </div>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"></code></pre></div>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span></code></pre></div>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>feedback</th>
+      <th>feedback_chars</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>audi is awsome</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Maruthi is best</td>
+      <td>15</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
 </div>
   <aside>
       

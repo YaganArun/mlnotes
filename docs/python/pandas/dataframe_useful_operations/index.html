@@ -34,7 +34,7 @@
   "@type": "BlogPosting",
   "headline": "Useful operations on a DataFrame",
   "url": "https:\/\/YaganArun.github.io\/mlnotes\/python\/pandas\/dataframe_useful_operations\/",
-  "wordCount": "318",
+  "wordCount": "497",
   "datePublished": "2020-08-12T00:00:00\x2b00:00",
   "dateModified": "2020-08-12T00:00:00\x2b00:00",
   "author": {
@@ -123,8 +123,8 @@ MathJax.Hub.Config({
     </div>
   </header>
   <div class="content">
-  <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">cars</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">&#39;Audi&#39;</span> <span class="p">,</span> <span class="mi">10</span><span class="p">]</span> <span class="p">,</span> <span class="p">[</span><span class="s1">&#39;Apple&#39;</span> <span class="p">,</span> <span class="bp">None</span><span class="p">]</span> <span class="p">,</span> <span class="p">[</span><span class="s1">&#39;Lambhorghini&#39;</span><span class="p">,</span><span class="mi">10</span><span class="p">]</span> <span class="p">,</span> <span class="p">[</span><span class="s1">&#39;Bens&#39;</span><span class="p">,</span><span class="mi">9</span><span class="p">]</span> <span class="p">,</span> <span class="p">[</span><span class="s1">&#39;Samsung&#39;</span><span class="p">,</span><span class="bp">None</span><span class="p">]</span> <span class="p">,</span> <span class="p">[</span><span class="s1">&#39;Google&#39;</span><span class="p">,</span><span class="bp">None</span><span class="p">]</span> <span class="p">,</span> <span class="p">[</span><span class="s1">&#39;Apple&#39;</span><span class="p">,</span><span class="bp">None</span><span class="p">]]</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">cars</span> <span class="p">,</span> <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Cars&#39;</span> <span class="p">,</span> <span class="s1">&#39;Rating&#39;</span><span class="p">])</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span></code></pre></div>
+  <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+<span class="n">DATA_PATH</span> <span class="o">=</span> <span class="s1">&#39;/Users/yaganarun/Documents/TACTII/kaggle_learnathon/mlnotes/content/python/heart.csv&#39;</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">DATA_PATH</span><span class="p">)</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span></code></pre></div>
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -143,57 +143,70 @@ MathJax.Hub.Config({
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>Cars</th>
-      <th>Rating</th>
+      <th>age</th>
+      <th>sex</th>
+      <th>cp</th>
+      <th>trestbps</th>
+      <th>chol</th>
+      <th>fbs</th>
+      <th>restecg</th>
+      <th>thalach</th>
+      <th>exang</th>
+      <th>oldpeak</th>
+      <th>slope</th>
+      <th>ca</th>
+      <th>thal</th>
+      <th>target</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>Audi</td>
-      <td>10.0</td>
+      <td>63</td>
+      <td>1</td>
+      <td>3</td>
+      <td>145</td>
+      <td>233</td>
+      <td>1</td>
+      <td>0</td>
+      <td>150</td>
+      <td>0</td>
+      <td>2.3</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>Apple</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Lambhorghini</td>
-      <td>10.0</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Bens</td>
-      <td>9.0</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Samsung</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>Google</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>Apple</td>
-      <td>NaN</td>
+      <td>37</td>
+      <td>1</td>
+      <td>2</td>
+      <td>130</td>
+      <td>250</td>
+      <td>0</td>
+      <td>1</td>
+      <td>187</td>
+      <td>0</td>
+      <td>3.5</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>1</td>
     </tr>
   </tbody>
 </table>
 </div>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Operation 1 : finding columns in a dataframe</span>
 <span class="n">df</span><span class="o">.</span><span class="n">columns</span></code></pre></div>
-<pre><code>Index(['Cars', 'Rating'], dtype='object')
+<pre><code>Index(['age', 'sex', 'cp', 'trestbps', 'chol', 'fbs', 'restecg', 'thalach',
+       'exang', 'oldpeak', 'slope', 'ca', 'thal', 'target'],
+      dtype='object')
 </code></pre>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Operation 2 : knowing the row and columns in a dataframe</span>
 <span class="n">row</span> <span class="p">,</span> <span class="n">column</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 <span class="k">print</span><span class="p">(</span><span class="s1">&#39;no of rows : {} , no of columns : {} &#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">row</span> <span class="p">,</span> <span class="n">column</span><span class="p">))</span></code></pre></div>
-<pre><code>no of rows : 7 , no of columns : 2 
+<pre><code>no of rows : 303 , no of columns : 14 
 </code></pre>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Operation 3 : Knowing first 5 rows in a dataframe </span>
 <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span></code></pre></div>
@@ -215,35 +228,107 @@ MathJax.Hub.Config({
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>Cars</th>
-      <th>Rating</th>
+      <th>age</th>
+      <th>sex</th>
+      <th>cp</th>
+      <th>trestbps</th>
+      <th>chol</th>
+      <th>fbs</th>
+      <th>restecg</th>
+      <th>thalach</th>
+      <th>exang</th>
+      <th>oldpeak</th>
+      <th>slope</th>
+      <th>ca</th>
+      <th>thal</th>
+      <th>target</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>Audi</td>
-      <td>10.0</td>
+      <td>63</td>
+      <td>1</td>
+      <td>3</td>
+      <td>145</td>
+      <td>233</td>
+      <td>1</td>
+      <td>0</td>
+      <td>150</td>
+      <td>0</td>
+      <td>2.3</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>Apple</td>
-      <td>NaN</td>
+      <td>37</td>
+      <td>1</td>
+      <td>2</td>
+      <td>130</td>
+      <td>250</td>
+      <td>0</td>
+      <td>1</td>
+      <td>187</td>
+      <td>0</td>
+      <td>3.5</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>Lambhorghini</td>
-      <td>10.0</td>
+      <td>41</td>
+      <td>0</td>
+      <td>1</td>
+      <td>130</td>
+      <td>204</td>
+      <td>0</td>
+      <td>0</td>
+      <td>172</td>
+      <td>0</td>
+      <td>1.4</td>
+      <td>2</td>
+      <td>0</td>
+      <td>2</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>Bens</td>
-      <td>9.0</td>
+      <td>56</td>
+      <td>1</td>
+      <td>1</td>
+      <td>120</td>
+      <td>236</td>
+      <td>0</td>
+      <td>1</td>
+      <td>178</td>
+      <td>0</td>
+      <td>0.8</td>
+      <td>2</td>
+      <td>0</td>
+      <td>2</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>Samsung</td>
-      <td>NaN</td>
+      <td>57</td>
+      <td>0</td>
+      <td>0</td>
+      <td>120</td>
+      <td>354</td>
+      <td>0</td>
+      <td>1</td>
+      <td>163</td>
+      <td>1</td>
+      <td>0.6</td>
+      <td>2</td>
+      <td>0</td>
+      <td>2</td>
+      <td>1</td>
     </tr>
   </tbody>
 </table>
@@ -268,61 +353,130 @@ MathJax.Hub.Config({
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>Cars</th>
-      <th>Rating</th>
+      <th>age</th>
+      <th>sex</th>
+      <th>cp</th>
+      <th>trestbps</th>
+      <th>chol</th>
+      <th>fbs</th>
+      <th>restecg</th>
+      <th>thalach</th>
+      <th>exang</th>
+      <th>oldpeak</th>
+      <th>slope</th>
+      <th>ca</th>
+      <th>thal</th>
+      <th>target</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>2</th>
-      <td>Lambhorghini</td>
-      <td>10.0</td>
+      <th>298</th>
+      <td>57</td>
+      <td>0</td>
+      <td>0</td>
+      <td>140</td>
+      <td>241</td>
+      <td>0</td>
+      <td>1</td>
+      <td>123</td>
+      <td>1</td>
+      <td>0.2</td>
+      <td>1</td>
+      <td>0</td>
+      <td>3</td>
+      <td>0</td>
     </tr>
     <tr>
-      <th>3</th>
-      <td>Bens</td>
-      <td>9.0</td>
+      <th>299</th>
+      <td>45</td>
+      <td>1</td>
+      <td>3</td>
+      <td>110</td>
+      <td>264</td>
+      <td>0</td>
+      <td>1</td>
+      <td>132</td>
+      <td>0</td>
+      <td>1.2</td>
+      <td>1</td>
+      <td>0</td>
+      <td>3</td>
+      <td>0</td>
     </tr>
     <tr>
-      <th>4</th>
-      <td>Samsung</td>
-      <td>NaN</td>
+      <th>300</th>
+      <td>68</td>
+      <td>1</td>
+      <td>0</td>
+      <td>144</td>
+      <td>193</td>
+      <td>1</td>
+      <td>1</td>
+      <td>141</td>
+      <td>0</td>
+      <td>3.4</td>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>0</td>
     </tr>
     <tr>
-      <th>5</th>
-      <td>Google</td>
-      <td>NaN</td>
+      <th>301</th>
+      <td>57</td>
+      <td>1</td>
+      <td>0</td>
+      <td>130</td>
+      <td>131</td>
+      <td>0</td>
+      <td>1</td>
+      <td>115</td>
+      <td>1</td>
+      <td>1.2</td>
+      <td>1</td>
+      <td>1</td>
+      <td>3</td>
+      <td>0</td>
     </tr>
     <tr>
-      <th>6</th>
-      <td>Apple</td>
-      <td>NaN</td>
+      <th>302</th>
+      <td>57</td>
+      <td>0</td>
+      <td>1</td>
+      <td>130</td>
+      <td>236</td>
+      <td>0</td>
+      <td>0</td>
+      <td>174</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>2</td>
+      <td>0</td>
     </tr>
   </tbody>
 </table>
 </div>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Operation 5 : To know unique values in a dataframe ==&gt; df.column_name.unique()</span>
-<span class="n">df</span><span class="o">.</span><span class="n">Cars</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span></code></pre></div>
-<pre><code>array(['Audi', 'Apple', 'Lambhorghini', 'Bens', 'Samsung', 'Google'],
-      dtype=object)
+<span class="n">df</span><span class="o">.</span><span class="n">age</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span></code></pre></div>
+<pre><code>array([63, 37, 41, 56, 57, 44, 52, 54, 48, 49, 64, 58, 50, 66, 43, 69, 59,
+       42, 61, 40, 71, 51, 65, 53, 46, 45, 39, 47, 62, 34, 35, 29, 55, 60,
+       67, 68, 74, 76, 70, 38, 77])
 </code></pre>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Operation 6 : getting count of each entities in a column.</span>
-<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Cars&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span></code></pre></div>
-<pre><code>Apple           2
-Lambhorghini    1
-Samsung         1
-Bens            1
-Google          1
-Audi            1
-Name: Cars, dtype: int64
+<span class="n">df</span><span class="o">.</span><span class="n">target</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span></code></pre></div>
+<pre><code>1    165
+0    138
+Name: target, dtype: int64
 </code></pre>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Operation 7 : grouping data in a data frame</span>
 <span class="c1"># here dataframe is grouped based on rating </span>
-<span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;Rating&#39;</span><span class="p">])[</span><span class="s1">&#39;Cars&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span></code></pre></div>
-<pre><code>Rating
-9.0     1
-10.0    2
-Name: Cars, dtype: int64
+<span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;sex&#39;</span><span class="p">])[</span><span class="s1">&#39;target&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span></code></pre></div>
+<pre><code>sex
+0     96
+1    207
+Name: target, dtype: int64
 </code></pre>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"></code></pre></div>
 </div>
