@@ -30,6 +30,15 @@
     </item>
     
     <item>
+      <title>Seaborn count plot</title>
+      <link>https://YaganArun.github.io/mlnotes/python/seaborn/seaborn_countplot/</link>
+      <pubDate>Tue, 11 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://YaganArun.github.io/mlnotes/python/seaborn/seaborn_countplot/</guid>
+      <description>import seaborn as sns import pandas as pdvehicle = [[&amp;#39;audi&amp;#39;,1] , [&amp;#39;appache&amp;#39;,2] , [&amp;#39;benz&amp;#39;,1] , [&amp;#39;lambhorghini&amp;#39;,1]] custom = pd.DataFrame(data=vehicle , columns=[&amp;#39;vehicle&amp;#39;,&amp;#39;class&amp;#39;])# x must a column from your dataset sns.countplot( x = &amp;#39;class&amp;#39; , data = custom) &amp;lt;AxesSubplot:xlabel=&#39;class&#39;, ylabel=&#39;count&#39;&amp;gt;  </description>
+    </item>
+    
+    <item>
       <title>To find null in a DataFrame</title>
       <link>https://YaganArun.github.io/mlnotes/python/pandas/dataframe_isnull/</link>
       <pubDate>Tue, 11 Aug 2020 00:00:00 +0000</pubDate>
@@ -39,7 +48,7 @@
     </item>
     
     <item>
-      <title>List Comprehension</title>
+      <title>F1 Score using scikit learn</title>
       <link>https://YaganArun.github.io/mlnotes/python/machinelearning/f1-score-scikit/</link>
       <pubDate>Sat, 20 Apr 2019 00:00:00 +0000</pubDate>
       

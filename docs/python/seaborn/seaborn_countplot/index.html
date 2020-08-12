@@ -16,14 +16,14 @@
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<meta property="og:title" content="F1 Score using scikit learn" />
+<meta property="og:title" content="Seaborn count plot" />
 <meta property="og:description" content="-" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://YaganArun.github.io/mlnotes/python/machinelearning/f1-score-scikit/" /><meta property="article:published_time" content="2019-04-20T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2019-04-20T00:00:00&#43;00:00"/>
+<meta property="og:url" content="https://YaganArun.github.io/mlnotes/python/seaborn/seaborn_countplot/" /><meta property="article:published_time" content="2020-08-11T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2020-08-11T00:00:00&#43;00:00"/>
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="F1 Score using scikit learn"/>
+<meta name="twitter:title" content="Seaborn count plot"/>
 <meta name="twitter:description" content="-"/>
 <meta name="generator" content="Hugo 0.53" />
 
@@ -32,20 +32,20 @@
 {
   "@context": "http://schema.org",
   "@type": "BlogPosting",
-  "headline": "F1 Score using scikit learn",
-  "url": "https:\/\/YaganArun.github.io\/mlnotes\/python\/machinelearning\/f1-score-scikit\/",
-  "wordCount": "27",
-  "datePublished": "2019-04-20T00:00:00\x2b00:00",
-  "dateModified": "2019-04-20T00:00:00\x2b00:00",
+  "headline": "Seaborn count plot",
+  "url": "https:\/\/YaganArun.github.io\/mlnotes\/python\/seaborn\/seaborn_countplot\/",
+  "wordCount": "38",
+  "datePublished": "2020-08-11T00:00:00\x2b00:00",
+  "dateModified": "2020-08-11T00:00:00\x2b00:00",
   "author": {
     "@type": "Person",
-    "name": "TACT"
+    "name": "Yagan Arun"
   },
   "description": "-"
 }
 </script> 
 
-    <title>F1 Score using scikit learn</title>
+    <title>Seaborn count plot</title>
 
     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
@@ -117,17 +117,20 @@ MathJax.Hub.Config({
   <div class="technical_note">
   <header>
       
-    <h1 class="technical_note_title">F1 Score using scikit learn</h1>
+    <h1 class="technical_note_title">Seaborn count plot</h1>
     <div class="technical_note_date">
-      <time datetime=" 2019-04-20T00:00:00Z "> 20 Apr 2019</time>
+      <time datetime=" 2020-08-11T00:00:00Z "> 11 Aug 2020</time>
     </div>
   </header>
   <div class="content">
-  <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">f1_score</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">y_true</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
-<span class="n">y_pred</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">f1_score_</span> <span class="o">=</span> <span class="n">f1_score</span><span class="p">(</span><span class="n">y_true</span> <span class="p">,</span> <span class="n">y_pred</span> <span class="p">,</span> <span class="n">average</span><span class="o">=</span><span class="s1">&#39;micro&#39;</span><span class="p">)</span>
-<span class="n">f1_score_</span></code></pre></div>
-<pre><code>0.3333333333333333
+  <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">seaborn</span> <span class="kn">as</span> <span class="nn">sns</span> 
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">vehicle</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">&#39;audi&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="p">,</span> <span class="p">[</span><span class="s1">&#39;appache&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="p">,</span> <span class="p">[</span><span class="s1">&#39;benz&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="p">,</span> <span class="p">[</span><span class="s1">&#39;lambhorghini&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">]]</span>
+<span class="n">custom</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">vehicle</span> <span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;vehicle&#39;</span><span class="p">,</span><span class="s1">&#39;class&#39;</span><span class="p">])</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># x must a column from your dataset</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span> <span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;class&#39;</span> <span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">custom</span><span class="p">)</span></code></pre></div>
+<pre><code>&lt;AxesSubplot:xlabel='class', ylabel='count'&gt;
 </code></pre>
+
+<p><img src="seaborn_countplot_3_1.png" alt="png" /></p>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"></code></pre></div>
 </div>
   <aside>

@@ -1,6 +1,6 @@
 ---
 
-title: "List Comprehension"
+title: "F1 Score using scikit learn"
 author: "TACT"
 date: 2019-04-20
 description: "-"
