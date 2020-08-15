@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://YaganArun.github.io/mlnotes/python/machinelearning/mean_variance_sd/</loc>
+    <lastmod>2020-08-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://YaganArun.github.io/mlnotes/python/pandas/dataframe_useful_operations/</loc>
     <lastmod>2020-08-13T00:00:00+00:00</lastmod>
   </url>
@@ -59,7 +64,7 @@
   
   <url>
     <loc>https://YaganArun.github.io/mlnotes/</loc>
-    <lastmod>2020-08-13T00:00:00+00:00</lastmod>
+    <lastmod>2020-08-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

@@ -6,10 +6,20 @@
     <description>Recent content on Yagan Arun</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 13 Aug 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 15 Aug 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://YaganArun.github.io/mlnotes/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Mean , Variance , Standard Deviation</title>
+      <link>https://YaganArun.github.io/mlnotes/python/machinelearning/mean_variance_sd/</link>
+      <pubDate>Sat, 15 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://YaganArun.github.io/mlnotes/python/machinelearning/mean_variance_sd/</guid>
+      <description>Source 1.) Mean , Variance , SD =&amp;gt; https://www.mathsisfun.com/data/standard-deviation.html
+import pandas as pd import matplotlib.pyplot as plt import seaborn as sns import math import numpy as npdef calculate_mean(data): total = 0 for element in data: total += element return total / len(data)def calculate_variance(data , mean): total = 0 for element in data: total = total + (element - mean)**2 return totaldef calculate_standard_deviation(variance): return math.sqrt(variance)chennai_temp = [36,37,36,34,39,33,30,30,32,31,31,32,32,33,35] #temp in celcius  x_axis = np.</description>
+    </item>
     
     <item>
       <title>Useful operations on a DataFrame</title>
